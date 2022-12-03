@@ -7,7 +7,7 @@
 - Third-party get the push from push protocol, they get the data from Mina protocol.
 
 ### Architecture Overview
-<img width="831" alt="スクリーンショット 2022-12-04 0 35 19" src="https://user-images.githubusercontent.com/117018140/205457644-e64300d2-0912-4291-b797-1eda20dde51e.png">
+
 
 ### How it’s made
 - Use push protocol and polygon to inform users that a third party gets access to their data.
