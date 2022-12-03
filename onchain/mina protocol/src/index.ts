@@ -1,3 +1,3 @@
-import { Add } from './Add.js';
+import { DataVerifier } from "./DataVerifier.js";
 
-export { Add };
+export { DataVerifier };

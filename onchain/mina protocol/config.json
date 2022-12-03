@@ -1,4 +1,17 @@
 {
   "version": 1,
-  "networks": {}
+  "networks": {
+    "gohanv1": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/gohanv1.json",
+      "fee": "0.1",
+      "smartContract": "DataVerifier"
+    },
+    "gohanv2": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/gohanv2.json",
+      "fee": "0.1",
+      "smartContract": "DataVerifier"
+    }
+  }
 }
