@@ -2,16 +2,18 @@ import React from 'react';
 import './NotifCard.css';
 import { FcAbout, FcApproval, FcHighPriority } from "react-icons/fc";
 
-export const NotifCard = () => {
+export const NotifCard = (props) => {
   return (
     <div className='notifCardContainer'>
       <FcAbout className='icon'/>
       <div className='notifContent'>
-        <h3>New Request</h3>
-        <p>Your doctor is requsting for your heart beat data.</p>
+        <h3>{props.notifTitle}</h3>
+        <p>{props.notifMessage}</p>
       </div>
-      <FcApproval className='icon'/>
-      <FcHighPriority className='icon'/>
+      <div>
+        <FcApproval className='icon'/>
+        <FcHighPriority className='icon'/>
+      </div>
     </div>
   )
 }
