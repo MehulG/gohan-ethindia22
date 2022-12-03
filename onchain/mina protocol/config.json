@@ -12,6 +12,12 @@
       "keyPath": "keys/gohanv2.json",
       "fee": "0.1",
       "smartContract": "DataVerifier"
+    },
+    "gohanv3": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/gohanv3.json",
+      "fee": "0.1",
+      "smartContract": "DataVerifier"
     }
   }
 }
