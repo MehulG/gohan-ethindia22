@@ -7,7 +7,7 @@ pragma solidity ^0.8.9;
 contract Push {
     address public USER;
     string[] public availableParams;
-    string[] public availableOps = ["Max", "Min", "Avg"];
+    string[] public availableOps = ["Max", "Min", "Avg", "MAvg"];
 
     constructor(address _user, string[] memory _availableParams) {
         USER = _user;
