@@ -7,12 +7,11 @@ pragma solidity ^0.8.9;
 contract Push {
     address public USER;
     string[] public availableParams;
-    string[] public availableOps;
+    string[] public availableOps = ["Max", "Min", "Avg"];
 
-    constructor(address _user, string[] memory _availableParams, string[] memory _availableOps) {
+    constructor(address _user, string[] memory _availableParams) {
         USER = _user;
         availableParams = _availableParams;
-        availableOps = _availableOps;
     }
 
     function checkParam(string memory _param) internal view returns (bool) {
