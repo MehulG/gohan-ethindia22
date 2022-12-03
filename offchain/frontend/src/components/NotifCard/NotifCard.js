@@ -1,19 +1,17 @@
 import React from 'react';
 import './NotifCard.css';
-import { AiFillBell } from "react-icons/ai";
-import { FaAmazon, FaCentercode } from "react-icons/fa";
-
+import { FcAbout, FcApproval, FcHighPriority } from "react-icons/fc";
 
 export const NotifCard = () => {
   return (
     <div className='notifCardContainer'>
-      <AiFillBell/>
+      <FcAbout className='icon'/>
       <div className='notifContent'>
         <h3>New Request</h3>
         <p>Your doctor is requsting for your heart beat data.</p>
       </div>
-      <FaAmazon/>
-      <FaCentercode/>
+      <FcApproval className='icon'/>
+      <FcHighPriority className='icon'/>
     </div>
   )
 }
