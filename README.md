@@ -30,7 +30,7 @@
 ### For self-tracking Apps
 
 - Connected real-world data yields better insights for your users
-- Connect to a user's existing data to keep data privacy
+- Connect to a user's existing data while keeping data private
 
 ### For Pharmaceutical Companies
 
