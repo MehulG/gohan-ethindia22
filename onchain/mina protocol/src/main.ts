@@ -13,7 +13,11 @@ import {
   Poseidon
 } from 'snarkyjs';
 
+//take these params input from application
 
+var data_input = [1,4,2,3,5,6,10,8,9,7];
+var operator_input = [3,1];
+var range_input = [1,3];
 
 (async function main() {
   await isReady;
@@ -51,16 +55,15 @@ import {
 
   // ----------------------------------------------------
 
-var arr = [1,4,2,3,5,6,10,8,9,7];
-var arr64 = arr.map((x)=>Int64.from(x));
-var arr2 = [Int64.from(3),Int64.from(1)];
-var arr3 = [Int64.from(1),Int64.from(3)];
+var data = data_input.map((x)=>Int64.from(x));
+var operators = operator_input.map((x)=>Int64.from(x));
+var range = range_input.map((x)=>Int64.from(x));
 
 try{
   const txn1 = await Mina.transaction(deployerAccount, () => {
-    zkAppInstance.verifyData(new DataArray(arr64),
-                             new DataArray(arr2),
-                             new DataArray(arr3),
+    zkAppInstance.verifyData(new DataArray(data),
+                             new DataArray(operators),
+                             new DataArray(range),
                              CircuitString.fromString("blavlalalslas"),
                              CircuitString.fromString("blavlalalslas"));
     zkAppInstance.sign(zkAppPrivateKey);
@@ -70,14 +73,17 @@ try{
          console.log(err.message);
        } 
 
-       const events = await zkAppInstance.fetchEvents();
 
-       const dataArrayGlobal = arr2.concat(arr3);
-      var dataArrayGlobalField = dataArrayGlobal.map((x)=>x.toField());
-      dataArrayGlobalField = dataArrayGlobalField.concat(CircuitString.fromString("blavlalalslas").toFields()).concat(CircuitString.fromString("blavlalalslas").toFields());
+  //fetch events to verify if the Data Provided was good
+const events = await zkAppInstance.fetchEvents();
 
-       console.log(events[0].event.toFields(null).toString());
-       console.log(Poseidon.hash(dataArrayGlobalField).toString());
+const dataArrayGlobal = operators.concat(range);
+var dataArrayGlobalField = dataArrayGlobal.map((x)=>x.toField());
+dataArrayGlobalField = dataArrayGlobalField.concat(CircuitString.fromString("blavlalalslas").toFields()).concat(CircuitString.fromString("blavlalalslas").toFields());
+
+console.log(events[0].event.toFields(null).toString());
+console.log(Poseidon.hash(dataArrayGlobalField).toString());
+  
 
 /*       
 try{

@@ -1,3 +1,3 @@
-import { DataVerifier } from "./DataVerifier.js";
+import { DataVerifier, DataArray } from "./DataVerifier.js";
 
-export { DataVerifier };
+export { DataVerifier, DataArray };
